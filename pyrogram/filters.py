@@ -173,6 +173,18 @@ me = create(me_filter)
 
 # endregion
 
+
+# region edited_filter
+async def edited_filter(_, __, m: Message):
+    return bool(m.edit_date)
+
+
+edited = create(edited_filter)
+"""Filter edited messages."""
+
+
+# endregion
+
 # region bot_filter
 async def bot_filter(_, __, m: Message):
     return bool(m.from_user and m.from_user.is_bot)
